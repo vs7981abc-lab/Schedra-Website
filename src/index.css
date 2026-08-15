@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #03030c;
+    color: #f8fafc;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #03030c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e1e38;
+    border-radius: 5px;
+    border: 2px solid #03030c;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+  }
+}
+
+@layer utilities {
+  /* Premium Glassmorphism classes */
+  .glass-card {
+    background: rgba(10, 10, 26, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(15, 15, 38, 0.6);
+    border-color: rgba(0, 240, 255, 0.35);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .glass-nav {
+    background: rgba(3, 3, 12, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Neon Glowing Accents */
+  .neon-glow-cyan {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.15);
+  }
+
+  .neon-glow-purple {
+    box-shadow: 0 0 40px rgba(217, 70, 239, 0.15);
+  }
+
+  .neon-glow-combined {
+    box-shadow: 0 0 50px rgba(0, 240, 255, 0.1), 0 0 50px rgba(217, 70, 239, 0.1);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(217, 70, 239, 0.5);
+  }
+
+  /* Grid overlay */
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+  }
+}
+
+/* Gradient animate text */
+.gradient-text-purple-cyan {
+  background: linear-gradient(135deg, #d946ef 0%, #3b82f6 50%, #00f0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Timeline dots connector pulse */
+@keyframes timeline-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.timeline-pulse-dot {
+  animation: timeline-pulse 2s infinite;
+}
